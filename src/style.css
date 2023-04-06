@@ -1,0 +1,10 @@
+@import "~normalize.css";
+
+body {
+   margin: 0;
+ }
+
+nav {
+   padding: 0 1rem;
+ }
+
