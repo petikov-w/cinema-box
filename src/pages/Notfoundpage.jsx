@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from '../components/Container';
-export const Notfoundpage = () => {
+const Notfoundpage = () => {
     return (
         <Container>
             <h1>404 - страница не найдена</h1>
@@ -8,3 +8,5 @@ export const Notfoundpage = () => {
         </Container>
     )
 }
+
+export {Notfoundpage}

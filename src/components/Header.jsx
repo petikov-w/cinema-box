@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Container } from './Container';
 import { IoMoon, IoMoonOutline} from "react-icons/io5"
+import { BsToggleOff, BsToggleOn } from "react-icons/bs";
 
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
@@ -56,7 +57,8 @@ const Title = styled.a.attrs({
 
 
 export const Header = () => {
-    const [theme, setTheme] = useState("light");
+     const [theme, setTheme] = useState("light");
+    console.log('------>  ', document.body.getAttribute('data-theme'))
 
     const toggleTheme = () => setTheme(theme==='light' ? 'dark' : 'light');
 
@@ -76,9 +78,11 @@ export const Header = () => {
                         </WrapperNav>                                     
                         <ModeSwitcher onClick={toggleTheme}>
                             { theme==='light' ? (
-                                <IoMoonOutline size='14px' />
+                                // <IoMoonOutline size='14px' />
+                                <BsToggleOff size='18px' />
                             ) : (
-                                <IoMoon size='14px' />     
+                                // <IoMoon size='14px' />     
+                                <BsToggleOn size='18px' />     
                             ) }
                             {/* <span style={{marginLeft: '0.75rem' }}>{theme==='light' ? 'светлая' : 'темная'} тема</span>         */}
                         </ModeSwitcher>  

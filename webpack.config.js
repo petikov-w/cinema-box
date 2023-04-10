@@ -33,16 +33,16 @@ module.exports = {
                             modules: true,
                             sourceMap: !production
                         }
-                    }                    
+                    }
                 ]
             },
 
         ],
     },
     resolve: {
-        extensions: ["*", ".js", ".jsx", ".scss"],
+        extensions: [".*", ".js", ".jsx"],
     },
-    plugins: [      
+    plugins: [
         new HtmlWebpackPlugin({
             title: "Webpack & React",
             template: "./src/index.html",
@@ -57,7 +57,8 @@ module.exports = {
         }),
     ],
     devServer: {
-        port: 3001
+        port: 3001,
+        historyApiFallback: true
     },
     mode: production ? 'production' : 'development'
 };
