@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Container } from './Container';
-import { IoMoon, IoMoonOutline} from "react-icons/io5"
 import { BsToggleOff, BsToggleOn } from "react-icons/bs";
 
 const HeaderEl = styled.header`
@@ -54,16 +53,15 @@ const Title = styled.a.attrs({
   `;
 
 
-
-
 export const Header = () => {
-     const [theme, setTheme] = useState("light");
-    console.log('------>  ', document.body.getAttribute('data-theme'))
+    const [theme, setTheme] = useState(!localStorage.getItem('themeCinema') 
+                                       ? 'light' : localStorage.getItem('themeCinema'));
 
-    const toggleTheme = () => setTheme(theme==='light' ? 'dark' : 'light');
-
+    const toggleTheme = () => setTheme(theme==='light' ? 'dark' : 'light');    
+    
     useEffect(()=>{
-        document.body.setAttribute('data-theme', theme)
+        localStorage.setItem('themeCinema', theme)
+        document.body.setAttribute('data-theme', localStorage.getItem('themeCinema'))     
     }, [theme])
 
     return (
@@ -78,13 +76,10 @@ export const Header = () => {
                         </WrapperNav>                                     
                         <ModeSwitcher onClick={toggleTheme}>
                             { theme==='light' ? (
-                                // <IoMoonOutline size='14px' />
                                 <BsToggleOff size='18px' />
                             ) : (
-                                // <IoMoon size='14px' />     
                                 <BsToggleOn size='18px' />     
                             ) }
-                            {/* <span style={{marginLeft: '0.75rem' }}>{theme==='light' ? 'светлая' : 'темная'} тема</span>         */}
                         </ModeSwitcher>  
                     </WrapperRight>
                                          

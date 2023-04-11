@@ -6,7 +6,7 @@ import App from './App';
 import { createGlobalStyle } from 'styled-components'
 
 const Global = createGlobalStyle`
-body[data-theme='dark'] {
+/* body[data-theme='dark'] {
   --colors-text: hsl(0, 0%, 100%);
   --colors-link: #cbceb7;
   --colors-active-nav: yellowgreen;
@@ -21,7 +21,7 @@ body[data-theme='light'] {
   --colors-bg: hsl(0, 0%, 98%);
   --colors-ui-base: hsl(0, 0%, 100%);
   --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
+} */
 
 .active {
   color: var(--colors-active-nav);

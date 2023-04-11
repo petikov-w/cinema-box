@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { Container } from './Container';
-import { IoMoon, IoMoonOutline} from "react-icons/io5"
 
 const FooterEl = styled.footer`
   box-shadow: var(--shadow);
@@ -16,12 +15,6 @@ const Wrapper = styled.div`
    padding: 2rem 0;
 `;
 
-// const ModeSwitcher = styled.div` 
-//   color: var(--colors-text);
-//   font-size: var(--fs-sm);
-//   cursor: pointer;
-//   text-transform: capitalize;
-// `;
 
 const Title = styled.a.attrs({
     href: '/',
@@ -42,21 +35,7 @@ const Copyright = styled.a.attrs({
    text-decoration: none;
   `;
 
-export const Footer = (props) => {
-    //const [theme, setTheme] = useState("light");
-
-    // const toggleTheme = () => setTheme(theme==='light' ? 'dark' : 'light');
-
-    // useEffect(()=>{
-    //     document.body.setAttribute('data-theme', theme)
-    // }, [theme])
-
-    // .content {
-    //     min-height: calc(100vh - 70px - 64px);
-    //     padding: 1.5rem 0;
-    //   }
-      
-
+export const Footer = () => {
     return (
         <FooterEl>
             <Container>          
