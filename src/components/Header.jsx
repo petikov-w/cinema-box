@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Container } from './Container';
 import { BsToggleOff, BsToggleOn } from "react-icons/bs";
@@ -24,6 +24,7 @@ const WrapperNav = styled.div`
    /* padding: 1rem 0; */
    min-width: 10vw;
    margin-right: 70px;
+   width: 15vw;
 `;
 
 const WrapperRight = styled.div` 
@@ -43,14 +44,13 @@ const ModeSwitcher = styled.div`
   text-transform: capitalize;
 `;
 
-const Title = styled.a.attrs({
-    href: '/',
-  })`
-   color: var(--colors-text);
+
+const LogoLink = styled(Link)`
+  color: var(--colors-text);
    font-size: var(--fs-sm);
    font-weight: var(--fw-bold);
    text-decoration: none;
-  `;
+`;  
 
 
 export const Header = () => {
@@ -68,11 +68,11 @@ export const Header = () => {
         <HeaderEl>
             <Container>          
                 <Wrapper>
-                    <Title>КИНО</Title>
+                    <LogoLink to='/'>КИНО</LogoLink>
                     <WrapperRight>
                         <WrapperNav>
-                            <NavLink to='/'>Home</NavLink>
-                            <NavLink to='/posts'>Blog</NavLink>   
+                            <NavLink to='/'>Главная</NavLink>
+                            <NavLink to='/films'>Каталог</NavLink>   
                         </WrapperNav>                                     
                         <ModeSwitcher onClick={toggleTheme}>
                             { theme==='light' ? (

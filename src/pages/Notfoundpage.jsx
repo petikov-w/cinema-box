@@ -1,6 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Container } from '../components/Container';
-const Notfoundpage = () => {
+const NotFoundPage = () => {
+
+    useEffect(()=>{
+        document.title = "Cinema Box - Страница не найдена"     
+    }, [])
+
     return (
         <Container>
             <h1>404 - страница не найдена</h1>
@@ -9,4 +14,4 @@ const Notfoundpage = () => {
     )
 }
 
-export {Notfoundpage}
+export {NotFoundPage}

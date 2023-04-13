@@ -1,12 +1,20 @@
 import { Container } from '../components/Container';
+import { useEffect } from 'react';
 
-const Homepage = () => {
+
+const HomePage = () => {
+
+    useEffect(()=>{
+        document.title = "Cinema Box - Главная страница"     
+    }, [])
+
+
     return (
         <Container>
             <h1>Главная</h1>
-            <p>Это главная страница сайта</p>
+            <p>Это главная страница сайта</p>           
         </Container>        
     )
 }
 
-export {Homepage}
+export {HomePage}
