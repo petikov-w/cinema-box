@@ -15,6 +15,9 @@ const CardBox = styled.div`
     cursor: pointer;
     transition: transform 200ms ease-in;    
     margin-bottom: 20px; 
+    &:hover {
+      transform: scale(1.05);
+    }
 `;
 
 const CardImage = styled.img`
@@ -38,25 +41,18 @@ const CardDescription = styled.p`
     padding: 0 1.5rem;`
 
 
-const CardButton = styled.button`
-    padding: 0.3rem;
-    font-family: inherit;
-    font-weight: bold;
-    font-size: 0.8rem;
-    margin: 1rem;
-    border: 2px solid var(--colors-card-btn);
-    background: transparent;
-    color: var(--colors-card-btn);
-    border-radius: 0.5rem;
-    /* transition: background 200ms ease-in, color 200ms ease-in; */
-    margin-top: -0.3rem;
-    cursor: pointer;
-    &:hover {
-      border-color: var(--colors-card-btn-hover);
-      color: var(--colors-card-btn-hover);
-      transform: scale(1.05);
+const CardLink = styled(Link)`
+ padding: 1rem 1.5rem;
+ color: var(--colors-card-link); 
+ font-size: 0.8rem;
+ font-weight: var(--fw-light);
+ text-decoration: none;
+ cursor: pointer;
+ &:hover {
+      color: var(--colors-card-link-hover);      
     }
-`;
+`;  
+
 
 
 export const Card = (props) => {
@@ -72,11 +68,9 @@ export const Card = (props) => {
           <CardDescription>Take your boring salads up a knotch. This recipe is perfect for lunch
                             and only contains 5 ingredients!
           </CardDescription>         
-        </div>
-        <Link to={'/films/5'} >
-            <CardButton onClick={handlerCardBtn}>More...</CardButton>
-        </Link>
-        
+        </div>                  
+        <CardLink to={'/films/5'}>More...</CardLink>
+          
       </CardBox>
     );
   }
