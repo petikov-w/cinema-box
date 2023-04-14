@@ -39,7 +39,7 @@ export const Card_v2 = (props, bg) => {
     const {filmId, nameRu, year, rating, posterUrl} = props;
 
     return (
-      <CardLink to={`/films/${filmId}`}>
+      <CardLink to={`/films/${filmId}`} state={nameRu}>
         <CardBox bg={posterUrl} />
       </CardLink>      
     );
