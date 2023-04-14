@@ -4,6 +4,9 @@ import {Link} from 'react-router-dom'
 
 
 const CardBox = styled.div`
+    background-image: url(${props => props.bg}); 
+    background-repeat: no-repeat;    
+    background-size: cover;   
     overflow: hidden;
     box-shadow: 0 2px 20px #e1e5ee;
     border-radius: 0.5rem;
@@ -20,26 +23,6 @@ const CardBox = styled.div`
     }
 `;
 
-const CardImage = styled.img`
-  display: block;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center top;
-  box-shadow: var(--shadow);
-`;
-
-const CardTitle = styled.h5`   
-    padding: 0 1.5rem;
-    margin-bottom: -0.2rem;    
-
-`
-
-const CardDescription = styled.p`  
-    font-size: 0.7rem;
-    font-weight: 300;
-    padding: 0 1.5rem;`
-
 const CardLink = styled(Link)`
  padding: 1rem 1.5rem;
  color: var(--colors-card-link); 
@@ -52,21 +35,13 @@ const CardLink = styled(Link)`
     }
 `;  
 
-export const Card = (props) => {
+export const Card_v2 = (props, bg) => {
     const {filmId, nameRu, year, rating, posterUrl} = props;
 
     return (
-      <CardBox>
-        <div>
-          <CardImage src={posterUrl} />
-          <CardTitle>{nameRu}</CardTitle>
-          {/* <CardDescription>Take your boring salads up a knotch. This recipe is perfect for lunch
-                            and only contains 5 ingredients!
-          </CardDescription>          */}
-        </div>                  
-        <CardLink to={'/films/5'}>More...</CardLink>
-          
-      </CardBox>
+      <CardLink to={`/films/${filmId}`}>
+        <CardBox bg={posterUrl} />
+      </CardLink>      
     );
   }
 
