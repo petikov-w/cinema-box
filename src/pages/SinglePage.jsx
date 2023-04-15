@@ -12,8 +12,9 @@ const ImageBox = styled.div`
 overflow: hidden;
 box-shadow: 0 2px 20px #e1e5ee;
 border-radius: 0.5rem;
-width: 25rem;
-height: 600px;
+width: 20rem;
+height: 500px;
+margin-bottom: 2rem;
 `;
 
 const PosterFilm = styled.img`
@@ -29,9 +30,25 @@ const BackButton = styled.button`
     padding: 0.8rem 5rem;
     background-color: #88a4c3;
     color: #2a2c2e;
-    margin-top: 2rem;
+    margin-bottom: 2rem; 
     border-radius: 5px;
     border: none;
+`
+const SingleFilmSection = styled.div`
+    display: flex;
+    justify-self: flex-start;
+    
+`
+const InfoBoxLeft = styled.div`
+`
+
+const InfoBoxRight = styled.div`
+    margin-left: 3rem;
+`
+const FlexRow = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 `
 
 const SinglePage = () => {
@@ -56,13 +73,23 @@ const SinglePage = () => {
    
     return (
         <Container>
-            <h1>{film.nameRu}</h1>
-
-            <ImageBox>
-                <PosterFilm src={film.posterUrl}></PosterFilm>
-            </ImageBox>
+            <h1>{film.nameRu} ({film.year})</h1>
+            <SingleFilmSection>
+                <InfoBoxLeft>
+                    <ImageBox>
+                        <PosterFilm src={film.posterUrl}></PosterFilm>               
+                    </ImageBox>
+                    <BackButton onClick={goBack}>Назад</BackButton> 
+                </InfoBoxLeft>  
+                <InfoBoxRight>
+                    <h5>Краткое содержание: </h5>
+                    <p>{film.description}</p>
+                    <FlexRow><h5>Год производства : </h5><span>{film.year}</span></FlexRow>
+                </InfoBoxRight>
+            </SingleFilmSection>
+          
             
-            <BackButton onClick={goBack}>Назад</BackButton>
+            
         </Container>        
     )
 }
