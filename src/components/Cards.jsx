@@ -1,4 +1,4 @@
-import {Card_v2} from './Card_v2'
+import {Card} from './Card'
 // import {Card} from './Card'
 import styled from 'styled-components';
 
@@ -20,7 +20,7 @@ export const Cards = (props) => {
   return (
       <StyledWrapper>
         {films.map((film) => (
-          <Card_v2 key={film.filmId} {...film} />
+          <Card key={film.filmId} {...film} />
         ))}
       </StyledWrapper>
   );
