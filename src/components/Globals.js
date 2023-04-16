@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components"
+
+export const Global = createGlobalStyle`
+
 @import "~normalize.css";
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800&display=swap');
 
@@ -6,19 +10,26 @@
 }
 
 :root {
-  /* Typography */
+  /* Типографика */
   --family: Roboto, sans-serif;
   --fs-vsm: 12px;
   --fs-sm: 14px;
   --fs-md: 16px;
   --fw-light: 300;
   --fw-normal: 600;
-  --fw-bold: 800;
-
-  /* Other */
-  --radii: 0.5rem;
+  --fw-bold: 800;  
 }
 
+body {
+  margin: 0;
+  font-family: var(--family);
+  color: var(--colors-text);
+  font-weight: var(--fw-light);
+  background-color: var(--colors-bg);
+}
+
+
+/* Тема */
 body[data-theme='dark'] {
   --colors-text: hsl(0, 0%, 100%);
   --colors-link: #cbceb7;
@@ -41,20 +52,15 @@ body[data-theme='light'] {
   --colors-card-link-hover: #000000;
 }
 
-body {
-  margin: 0;
-  font-family: var(--family);
-  color: var(--colors-text);
-  font-weight: var(--fw-light);
-  background-color: var(--colors-bg);
+/* Меню - подсветка активного пункта */
+.active {
+  color: var(--colors-active-nav);
 }
 
 a {
   color: var(--colors-link);
   text-decoration: none;
   font-weight: 500;
-  /* margin-right: 20px; */
-  /* color: ; */
 }
 
 a:hover {
@@ -62,8 +68,4 @@ a:hover {
 }
 
 
-
-/* color: var(--colors-text);
-   font-size: var(--fs-sm);
-   font-weight: var(--fw-bold);
-   text-decoration: none; */
+`

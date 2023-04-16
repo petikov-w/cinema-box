@@ -58,9 +58,10 @@ const SinglePage = () => {
     const [film, setFilm] = useState([]);
     const goBack = () => navigate(-1);    
     const location = useLocation();
+    const title = location.state.name + ' (' + location.state.year + ')';
 
     useEffect(()=>{
-        document.title = "Cinema Box - " + location.state;     
+        document.title = "Cinema Box - " + location.state.name;            
     }, [])
 
     useEffect(() => {
@@ -70,10 +71,10 @@ const SinglePage = () => {
             .then(data => setFilm(data))    
     }, [id]);
 
-   
     return (
+        
         <Container>
-            <h1>{film.nameRu} ({film.year})</h1>
+            <h1>{title}</h1>
             <SingleFilmSection>
                 <InfoBoxLeft>
                     <ImageBox>
@@ -84,7 +85,7 @@ const SinglePage = () => {
                 <InfoBoxRight>
                     <h5>Краткое содержание: </h5>
                     <p>{film.description}</p>
-                    <FlexRow><h5>Год производства : </h5><span>{film.year}</span></FlexRow>
+                    <h5>Год производства : <span style={{color:"blue"}}>{film.year}</span></h5>
                 </InfoBoxRight>
             </SingleFilmSection>
           

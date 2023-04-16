@@ -37,9 +37,12 @@ const CardLink = styled(Link)`
 
 export const Card_v2 = (props, bg) => {
     const {filmId, nameRu, year, rating, posterUrl} = props;
-
+    const SSS = {
+      name: nameRu,
+      year: year
+    }
     return (
-      <CardLink to={`/films/${filmId}`} state={nameRu}>
+      <CardLink to={`/films/${filmId}`} state={SSS}>
         <CardBox bg={posterUrl} />
       </CardLink>      
     );
