@@ -9,7 +9,7 @@ const production = process.env.NODE_ENV === 'production';
 
 
 module.exports = {
-    entry: { MoviesApp: path.resolve(__dirname, "./src/index.js") },
+    entry: { CinemaApp: path.resolve(__dirname, "./src/index.js") },
     output: {
         path: path.resolve(__dirname, "./dist"),
         filename: production ? '[name].[contenthash].js' : '[name].js',
@@ -62,7 +62,10 @@ module.exports = {
     ],
     devServer: {
         port: 3001,
-        historyApiFallback: true
+        historyApiFallback: true,
+        // contentBase: './',
     },
+
+
     mode: production ? 'production' : 'development'
 };

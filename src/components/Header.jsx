@@ -1,57 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Container } from './Container';
+import { Container } from './styles/Container.styled';
 import { BsToggleOff, BsToggleOn } from "react-icons/bs";
-
-const HeaderEl = styled.header`
-  box-shadow: var(--shadow);
-  background-color: var(--colors-ui-base);  
-`;
-
-const Wrapper = styled.div` 
-   display: flex;
-   justify-content: space-between;
-   align-items: center;   
-   /* padding: 1rem 0; */
-`;
-
-const WrapperNav = styled.div` 
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   /* padding: 1rem 0; */
-   min-width: 10vw;
-   margin-right: 70px;
-   width: 15vw;
-`;
-
-const WrapperRight = styled.div` 
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   align-items: center;
-   padding: 1rem 0;
-   min-width: 10vw;
-`;
-
-
-const ModeSwitcher = styled.div` 
-  color: var(--colors-text);
-  font-size: var(--fs-sm);
-  cursor: pointer;
-  text-transform: capitalize;
-  margin-right: -35px;
-`;
-
-
-const LogoLink = styled(Link)`
-  color: var(--colors-text);
-   font-size: var(--fs-sm);
-   font-weight: var(--fw-bold);
-   text-decoration: none;
-`;  
+import { HeaderEl, Wrapper, WrapperNav, WrapperRight, ModeSwitcher } from './styles/Header.styled'
+import { LogoLink } from './styles/Link.styled'
 
 
 export const Header = () => {
@@ -82,8 +35,7 @@ export const Header = () => {
                                 <BsToggleOn size='18px' />     
                             ) }
                         </ModeSwitcher>  
-                    </WrapperRight>
-                                         
+                    </WrapperRight>                                         
                 </Wrapper>
             </Container>            
         </HeaderEl>

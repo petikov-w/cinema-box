@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { Container } from '../components/Container';
+import { Container } from '../components/styles/Container.styled';
 const NotFoundPage = () => {
 
     useEffect(()=>{

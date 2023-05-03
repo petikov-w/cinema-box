@@ -1,5 +1,5 @@
 import { Cards } from '../components/Cards';
-import { Container } from '../components/Container';
+import { Container } from '../components/styles/Container.styled';
 import { useState, useEffect } from 'react';
 import { api_query } from '../components/Api';
 // import styled from 'styled-components';

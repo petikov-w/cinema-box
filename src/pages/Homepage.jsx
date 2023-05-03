@@ -1,4 +1,4 @@
-import { Container } from '../components/Container';
+import { Container } from '../components/styles/Container.styled';
 import { useEffect } from 'react';
 
 

@@ -1,4 +1,4 @@
-import { Container } from '../components/Container';
+import { Container } from '../components/styles/Container.styled';
 import { useState, useEffect } from 'react';
 import {useParams, useNavigate, useLocation} from 'react-router-dom'
 import styled from 'styled-components'
@@ -57,11 +57,12 @@ const SinglePage = () => {
     const { id } = useParams();
     const [film, setFilm] = useState([]);
     const goBack = () => navigate(-1);    
-    const location = useLocation();
-    const title = location.state.name + ' (' + location.state.year + ')';
+    // const location = useLocation();
+    // const title = location.state.name + ' (' + location.state.year + ')';
 
     useEffect(()=>{
-        document.title = "Cinema Box - " + location.state.name;            
+        document.title = "Cinema Box - ";            
+        // document.title = "Cinema Box - " + location.state.name;            
     }, [])
 
     useEffect(() => {
@@ -74,7 +75,7 @@ const SinglePage = () => {
     return (
         
         <Container>
-            <h1>{title}</h1>
+            <h1>{film.nameRu}</h1>
             <SingleFilmSection>
                 <InfoBoxLeft>
                     <ImageBox>

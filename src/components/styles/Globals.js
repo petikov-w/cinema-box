@@ -2,9 +2,6 @@ import { createGlobalStyle } from "styled-components"
 
 export const Global = createGlobalStyle`
 
-@import "~normalize.css";
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800&display=swap');
-
 * {
   box-sizing: border-box;
 }
@@ -52,6 +49,8 @@ body[data-theme='light'] {
   --colors-card-link-hover: #000000;
 }
 
+
+
 /* Меню - подсветка активного пункта */
 .active {
   color: var(--colors-active-nav);
@@ -66,6 +65,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 
 
 `
